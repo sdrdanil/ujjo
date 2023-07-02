@@ -1,0 +1,36 @@
+.icon {
+  @extend %mask-svg;
+
+  &--offset {
+    position: relative;
+  }
+
+  &--scorpion {
+    --mask-url: url('@img/icons.svg#scorpion');
+    max-width: 225px;
+    width: 100%;
+    aspect-ratio: 225 / 156;
+    background-color: black;
+  }
+
+  &--scorpion-flip {
+    @extend .icon--scorpion;
+    transform: scaleX(-1);
+  }
+
+  &--fire-one {
+    --mask-url: url('@img/icons.svg#shop_fire-1');
+    --mask-size: cover;
+    width: 5.8rem;
+    height: 5.8rem;
+    background-color: black;
+  }
+
+  &--fire-two {
+    --mask-url: url('@img/icons.svg#shop_fire-2');
+    --mask-size: cover;
+    width: 5.8rem;
+    height: 8.8rem;
+    background-color: black;
+  }
+}

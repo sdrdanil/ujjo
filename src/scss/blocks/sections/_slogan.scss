@@ -1,0 +1,76 @@
+.slogan {
+  $transition: .8s ease;
+  padding: 5.8rem 2.9rem;
+  // margin-top: calc(-1 * var(--border-width));
+  // border-top: $border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    @extend %mask-svg;
+    --mask-url: url('@img/icons.svg#scorpion');
+    max-width: 225px;
+    width: 100%;
+    aspect-ratio: 225 / 156;
+    background-color: black;
+    transition: $transition;
+  }
+
+  &::after {
+    transform: scaleX(-1);
+  }
+
+  &__title {
+    min-width: 78.5rem;
+    font-size: 6.5rem;
+    line-height: 1.123;
+    text-transform: uppercase;
+    text-align: center;
+    transition: $transition;
+
+    // &:hover {
+    //   color: var(--color-secondary);
+    // }
+  }
+
+  &:hover &__title {
+    color: var(--color-secondary);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: var(--color-accent);
+  }
+}
+
+@include breakpoint-down(lg) {
+  .slogan {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 2rem;
+
+    &__title {
+      order: 1;
+    }
+  }
+}
+
+@include breakpoint-down(sm) {
+  .slogan {
+    padding: 2.8rem 0.9rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &__title {
+      min-width: unset;
+      font-size: 8vw;
+    }
+  }
+}

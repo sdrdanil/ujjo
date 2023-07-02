@@ -1,0 +1,55 @@
+.running-line {
+  --gap: 3rem;
+  --length: 0;
+  --speed: 70;
+  --duration: calc((var(--length) / var(--speed)) * 1s);
+  overflow: hidden;
+
+  @include breakpoint-down(sm) {
+    --speed: 50;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: var(--gap);
+    animation: run var(--duration) linear infinite;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 6.8rem;
+
+    &--flip {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__text {
+    font-size: 1.7rem;
+    line-height: 2.6rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include breakpoint-down(lg) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@keyframes run {
+  0% {
+    transform: translateX(0);
+  }
+  
+  100% {
+    transform: translateX(calc(-1px * var(--length)));
+  }
+}
+

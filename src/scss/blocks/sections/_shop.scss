@@ -1,0 +1,146 @@
+@mixin svg-frame {
+  $offset-x: 2px;
+
+  content: '';
+  position: absolute;
+  display: block;
+  @extend %mask-svg;
+  transition: var(--item-transition);
+}
+
+.shop {
+  position: relative;
+  padding: 23px;
+  border-top: $border;
+
+  &__decoration {
+    position: absolute;
+    // z-index: 2;
+    left: 2.0rem;
+    right: 2.0rem;
+    top: 2.0rem;
+    // bottom: 2.0rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__decor-box {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+
+    &--one {
+      width: 100%;
+    }
+
+    &--two {
+      width: 39%;
+    }
+  }
+
+  &__collection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.0rem;
+  }
+
+  &__item {    
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &__link-wrapper {
+    display: block;
+  }
+
+  &__item-frame {
+    width: 100%;
+    aspect-ratio: 436 / 658;
+    fill: var(--color-primary);
+    stroke: black;
+    transition: .7s ease;
+  }
+
+  &__link-wrapper:hover &__item-frame {
+    fill: var(--color-accent);
+  }
+
+  &__item-content {
+    position: absolute;
+    inset: 19.604% 5.275% 3.495%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 01.98%;
+  }
+
+  &__product-title {
+    font-size: 3.2rem;
+    line-height: 1.1875;
+    white-space: nowrap;
+  }
+
+  &__product-description {
+    font-size: 1.8rem;
+    line-height: 1.5555;
+    white-space: nowrap;
+  }
+
+  &__product-picture {
+    border: .1rem solid #000000;
+    border-radius: 1.44rem;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(lg) {
+  .shop {
+    &__decor-box {
+      &--two {
+        display: none;;
+      }
+    }
+    
+    &__collection {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      max-width: 40vw;
+    }
+  }
+}
+
+@include breakpoint-down(650) {
+  .shop {
+    &__item {
+      max-width: 90%;
+    }
+  }
+}
+
+@include breakpoint-down(420) {
+  .shop {
+    padding: 4vw;
+
+    &__decor-box {
+      display: none;
+    }
+
+    &__item {
+      max-width: 100%;
+    }
+
+    &__product-description {
+      font-size: 4vw;
+    }
+
+    &__product-title {
+      font-size: 6vw;
+    }
+  }
+}

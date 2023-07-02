@@ -1,0 +1,90 @@
+html {
+  font-size: 62.5%;
+  font-size: .7vw;
+
+  @include breakpoint-down(lg) {
+    font-size: 7px;
+  }
+}
+
+body {
+  min-height: calc(100vh - 2 * var(--border-width));
+  min-height: 100vh;
+  padding: var(--body-padding-y) var(--body-padding-x);
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.wrapper {
+  min-height: calc(100vh - 2 * var(--body-padding-y));
+  overflow: hidden;
+  border: $border;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    background-color: var(--color-background);
+  }
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 1 auto;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(var(--header-height) - 1px);
+}
+
+.scroll-off {
+  @include breakpoint-down(lg) {
+    overflow: hidden;
+  }
+}
+
+.hidden-visually {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  z-index: -1;
+  inset: 0 var(--body-padding-x);
+  background-color: black;
+  opacity: 0;
+  transition: opacity var(--header-menu-duration) ease, z-index 0s linear var(--header-menu-duration);
+
+  &--active {
+    z-index: 2;
+    opacity: .5;
+    transition: opacity var(--header-menu-duration) ease;
+  }
+}
+
+// .header,
+// .hero,
+// .slogan,
+// .shop,
+// .story,
+// .footer,
+.none {
+  display: none !important;
+}

@@ -1,0 +1,87 @@
+.hero {
+  margin-right: calc(-1 * var(--border-width));
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 99.0rem;
+  border-top: $border;
+  // border-left: $border;
+  overflow-x: hidden;
+
+  &__block {
+    // order: 1;
+    flex-grow: 1;
+    width: 50%;
+    padding: 2.0rem 2.1rem;
+    border-bottom: $border;
+    border-right: $border;
+    // @extend %border-collapse;
+
+    &--title {
+      padding: 2.4rem 8.0rem 1.5rem;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    &--running-line {
+      flex-grow: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+    // object-position: center;
+  }
+
+  &__title {
+    font-size: 5.8rem;
+    line-height: 111%;
+    text-align: center;
+  }
+}
+
+@include breakpoint-down(700) {
+  .hero {
+    height: initial;
+    flex-wrap: nowrap;
+
+    &__block {
+      width: 100%;
+
+      &--image-title {
+        order: 1;
+      }
+
+      &--title {
+        order: 2;
+      }
+
+      &--running-line {
+        order: 3;
+      }
+
+      &--image {
+        display: none;
+      }
+    }
+  }
+}
+
+@include breakpoint-down(sm) {
+  .hero {
+    &__block {
+      &--title {
+        padding: 2rem 2rem;
+      }
+    }
+
+    &__title {
+      font-size: 8vw;
+    }
+  }
+}

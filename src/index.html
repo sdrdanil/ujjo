@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.min.css" rel="stylesheet">
+  <script defer src="js/app.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>Ujjo</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="overlay"></div>
+
+    <header class="header">
+      <div class="header__base">
+        <button class="header__button-toggle-menu" id="toggle-menu" aria-label="Toggle menu">
+          <img class="header__menu-icon header__menu-icon--open" src="@img/icons.svg#menu" alt="open menu" width="30"
+            height="30">
+          <img class="header__menu-icon header__menu-icon--close" src="@img/icons.svg#close" alt="close menu" width="30"
+            height="30">
+        </button>
+        <div class="header__logo">
+          <img class="header__logo-img" src="@img/icons.svg#logo" alt="logo" width="61" height="70">
+        </div>
+      </div>
+      <nav class="header__nav header__nav--first">
+        <a class="header__link header__link--colored" href="#">go&nbsp;back</a>
+        <a class="header__link header__link--default" href="#">story</a>
+        <a class="header__link header__link--default" href="#">shop</a>
+      </nav>
+      <nav class="header__nav header__nav--second">
+        <a class="header__link header__link--default" href="#">contact</a>
+        <a class="header__link header__link--default" href="#">wholesale</a>
+        <a class="header__link header__link--colored" href="#">clone</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__block hero__block--image-title">
+          <img class="hero__image" src="@img/icons.svg#hero_title" alt="title image" width="657" height="384">
+        </div>
+        <div class="hero__block hero__block--running-line">
+          <div class="running-line">
+            <ul class="running-line__wrapper">
+              <li class="running-line__item">
+                <img class="running-line__icon" src="@img/icons.svg#pepper" alt="pepper" width="68" height="31">
+              </li>
+              <li class="running-line__item">
+                <span class="running-line__text">put some fire in your belly</span>
+              </li>
+              <li class="running-line__item">
+                <img class="running-line__icon running-line__icon--flip" src="@img/icons.svg#pepper" alt="pepper"
+                  width="68" height="31">
+              </li>
+              <li class="running-line__item">
+                <span class="running-line__text">another text</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero__block hero__block--image">
+          <picture class="">
+            <source type="image/webp" srcset="@img/hero_image-1.webp">
+            <img class="hero__image" src="@img/hero_image-1.jpg" alt="sauce between cactus" width="657" height="436">
+          </picture>
+        </div>
+        <div class="hero__block hero__block--title">
+          <h1 class="hero__title">
+            THE FIRST HOT SAUCE MADE FOR COFFEE
+          </h1>
+        </div>
+        <div class="hero__block hero__block--image">
+          <picture class="">
+            <source type="image/webp" srcset="@img/hero_image-2.webp">
+            <img class="hero__image" src="@img/hero_image-2.jpg" alt="sauce in hand" width="656" height="705">
+          </picture>
+        </div>
+      </section>
+
+      <section class="slogan">
+        <h2 class="slogan__title">THROW SOME&nbsp;LAVA IN YOUR&nbsp;JAVA</h2>
+      </section>
+
+      <section class="shop">
+        <h2 class="hidden-visually">Shop</h2>
+        <div class="shop__decoration">
+          <div class="shop__decor-box shop__decor-box--one">
+            <div class="icon icon--fire-one"></div>
+            <div class="icon icon--fire-one"></div>
+          </div>
+          <div class="shop__decor-box shop__decor-box--two">
+            <div class="icon icon--fire-two"></div>
+            <div class="icon icon--fire-two"></div>
+          </div>
+        </div>
+        <ul class="shop__collection">
+          <li class="shop__item">
+            <a class="shop__link-wrapper" href="#">
+              <svg class="shop__item-frame">
+                <use href="@img/icons.svg#shop_frame"></use>
+              </svg>
+              <div class="shop__item-content">
+                <p class="shop__product-description">tangy and tingly</p>
+                <h3 class="shop__product-title">LIGHT ROAST BLEND</h3>
+                <picture class="shop__product-picture">
+                  <source type="image/webp" srcset="@img/sauce_image-1.webp">
+                  <img class="shop__image" src="@img/sauce_image-1.png" alt="sauce photo" width="390" height="411">
+                </picture>
+              </div>
+            </a>
+          </li>
+          <li class="shop__item">
+            <a class="shop__link-wrapper" href="#">
+              <svg class="shop__item-frame">
+                <use href="@img/icons.svg#shop_frame"></use>
+              </svg>
+              <div class="shop__item-content">
+                <p class="shop__product-description">light & dark roast</p>
+                <h3 class="shop__product-title">UJJO SAMPLER PACK</h3>
+                <picture class="shop__product-picture">
+                  <source type="image/webp" srcset="@img/sauce_image-2.webp">
+                  <img class="shop__image" src="@img/sauce_image-2.png" alt="sauce photo" width="390" height="411">
+                </picture>
+              </div>
+            </a>
+          </li>
+          <li class="shop__item">
+            <a class="shop__link-wrapper" href="#">
+              <svg class="shop__item-frame">
+                <use href="@img/icons.svg#shop_frame"></use>
+              </svg>
+              <div class="shop__item-content">
+                <p class="shop__product-description">tangy and tingly</p>
+                <h3 class="shop__product-title">DARK ROAST BLEND</h3>
+                <picture class="shop__product-picture">
+                  <source type="image/webp" srcset="@img/sauce_image-3.webp">
+                  <img class="shop__image" src="@img/sauce_image-3.png" alt="sauce photo" width="390" height="411">
+                </picture>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="story">
+        <div class="story__block story__block--running-line">
+          <div class="story__running-line running-line">
+            <ul class="running-line__wrapper">
+              <li class="running-line__item">
+                <img class="running-line__icon" src="@img/icons.svg#pepper" alt="pepper" width="68" height="31">
+              </li>
+              <li class="running-line__item">
+                <span class="running-line__text">put some fire in your belly</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="story__block story__block--picture-big">
+          <picture class="story__picture-big">
+            <source type="image/webp" srcset="@img/big-image.webp">
+            <img class="story__image" src="@img/big-image.jpg" alt="sauce" width="1354" height="682">
+          </picture>
+        </div>
+        <div class="story__block story__block--title">
+          <div class="story__block-title-content">
+            <h2 class="story__title">
+              the story behind the souce
+            </h2>
+            <picture class="story__picture-small">
+              <source type="image/webp" srcset="@img/story_image.webp">
+              <img class="story__image" src="@img/story_image.jpg" alt="sauce" width="697" height="471">
+            </picture>
+          </div>
+        </div>
+        <div class="story__block story__block--text">
+          <button class="story__wheel-button story__wheel-button--up" aria-label="Up text"></button>
+          <button class="story__wheel-button story__wheel-button--down" aria-label="Down text"></button>
+          <div class="story__text-wrapper">
+            <p class="story__text">
+              HELLO, I’M LAUREN AND AS A LIFELONG ADVENTUROUS EATER, I’VE TRIED A LOT OF CRAZY THINGS, BUT I NEVER
+              THOUGHT
+              HOT SAUCE IN COFFEE WAS A SANE OPTION UNTIL A FRIEND DARED ME TO TRY IT.
+            </p>
+            <p class="story__text">
+              AND IT SUCKED.
+            </p>
+            <p class="story__text">
+              BUT I WONDERED IF THERE WAS A WAY TO ADD SPICE TO MY COFFEE. WHEN THERE WAS NO EASY SOLUTION, UJJO WAS
+              BORN.
+            </p>
+            <p class="story__text">
+              UJJO (OOO-JOE): THE WORD FOR “FIRE” IN KONKANI, SPOKEN ON THE WEST COAST OF INDIA, IS AN HOMAGE AND A LOVE
+              LETTER TO MY DAD, AN INDIAN IMMIGRANT WHO INSTILLED A FIRE IN MY PALATE – AND MY HEART – FROM THE VERY
+              BEGINNING.
+            </p>
+            <p class="story__text">
+              UJJO (OOO-JOE): THE WORD FOR “FIRE” IN KONKANI, SPOKEN ON THE WEST COAST OF INDIA, IS AN HOMAGE AND A LOVE
+              LETTER TO MY DAD, AN INDIAN IMMIGRANT WHO INSTILLED A FIRE IN MY PALATE – AND MY HEART – FROM THE VERY
+              BEGINNING.
+            </p>
+            <p class="story__text">
+              UJJO (OOO-JOE): THE WORD FOR “FIRE” IN KONKANI, SPOKEN ON THE WEST COAST OF INDIA, IS AN HOMAGE AND A LOVE
+              LETTER TO MY DAD, AN INDIAN IMMIGRANT WHO INSTILLED A FIRE IN MY PALATE – AND MY HEART – FROM THE VERY
+              BEGINNING.
+            </p>
+            <p class="story__text">
+              UJJO (OOO-JOE): THE WORD FOR “FIRE” IN KONKANI, SPOKEN ON THE WEST COAST OF INDIA, IS AN HOMAGE AND A LOVE
+              LETTER TO MY DAD, AN INDIAN IMMIGRANT WHO INSTILLED A FIRE IN MY PALATE – AND MY HEART – FROM THE VERY
+              BEGINNING.
+            </p>
+            <p class="story__text">
+              UJJO (OOO-JOE): THE WORD FOR “FIRE” IN KONKANI, SPOKEN ON THE WEST COAST OF INDIA, IS AN HOMAGE AND A LOVE
+              LETTER TO MY DAD, AN INDIAN IMMIGRANT WHO INSTILLED A FIRE IN MY PALATE – AND MY HEART – FROM THE VERY
+              BEGINNING.
+            </p>
+          </div>
+        </div>
+        <div class="story__block story__block--running-line">
+          <div class="running-line">
+            <ul class="running-line__wrapper">
+              <li class="running-line__item">
+                <img class="running-line__icon" src="@img/icons.svg#pepper" alt="pepper" width="68" height="31">
+              </li>
+              <li class="running-line__item">
+                <span class="running-line__text">download our media kit</span>
+              </li>
+              <li class="running-line__item">
+                <img class="running-line__icon" src="@img/icons.svg#pepper" alt="pepper" width="68" height="31">
+              </li>
+              <li class="running-line__item">
+                <span class="running-line__text">CONTACT FOR PARTNERSHIP OPPORTUNITIES</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <ul class="footer__box">
+        <li class="footer__item"><a class="footer__link" href="#">privacy</a></li>
+        <li class="footer__item footer__item--address">ujjo llc, columbus oh, 43219</li>
+        <li class="footer__item"><a class="footer__link" href="#">instagram</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+</html>

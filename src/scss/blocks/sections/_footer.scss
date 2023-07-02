@@ -1,0 +1,141 @@
+@function footer-decor-offset-x($ratio) {
+  @return calc(50% + (var(--footer-x) - 50vw) * $ratio);
+}
+
+@function footer-decor-offset-y($ratio) {
+  @return calc(50% + (var(--footer-y) - var(--footer-height-center)) * $ratio);
+}
+
+.footer {
+  $height-decor: calc(756 / 1440 * 100vw);
+  $footer-box-height: 92px;
+  $ratio-title-top: 0.085;
+  $ratio-title-bottom: 0.04;
+  $ratio-title-fire: -0.03;
+
+  // get from js
+  --footer-top: 0;
+  --footer-height: calc($height-decor + $footer-box-height);
+  --footer-box-height: $footer-box-height;
+  // calculated
+  --footer-height-center: calc((var(--footer-height) / 2));
+  --footer-x: var(--x);
+  --footer-y: calc(var(--y) - var(--footer-top));
+  --ratio-title-top-x: #{$ratio-title-top};
+  --ratio-title-bottom-x: #{$ratio-title-bottom};
+  --ratio-fire-x: #{$ratio-title-fire};
+  --ratio-title-top-y: #{$ratio-title-top};
+  --ratio-title-bottom-y: #{$ratio-title-bottom};
+  --ratio-fire-y: #{$ratio-title-fire};
+  --footer-box-height-add: calc((var(--footer-y) - var(--footer-height-center)) * var(--ratio-fire-y));
+
+  position: relative;
+  box-sizing: content-box;
+  box-sizing: border-box;
+  margin-top: calc(-1 * var(--border-width));
+  border-top: $border;
+
+  &::before {
+    @extend %mask-svg;
+    --mask-url: url('@img/icons.svg#footer_fire'), linear-gradient(black, black);
+    --mask-position: #{footer-decor-offset-x(var(--ratio-fire-x))} calc(#{footer-decor-offset-y(var(--ratio-fire-y))} - var(--footer-box-height) / 2), center 103%;
+    --mask-size: 110%, 100% calc(var(--footer-box-height) - var(--footer-box-height-add) + 10px);
+
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(var(--color-primary) 0% 25%,
+        var(--color-secondary),
+        var(--color-accent) 75% 100%);
+    background-size: 100% 400%;
+    background-position-y: 0%;
+    transition: var(--throttle-ms) linear, background-position 3.5s ease-in-out;
+    will-change: -webkit-mask-position, mask-position;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: $height-decor;
+    background-image: url('@img/icons.svg#footer_frame'),
+      url('@img/icons.svg#footer_ujjo-top'),
+      url('@img/icons.svg#footer_ujjo-bottom');
+    background-repeat: no-repeat;
+    background-position:
+      center,
+      footer-decor-offset-x(var(--ratio-title-top-x)) footer-decor-offset-y(var(--ratio-title-top-y)),
+      footer-decor-offset-x(var(--ratio-title-bottom-x)) footer-decor-offset-y(var(--ratio-title-bottom-y));
+    background-size:
+      calc(1353 / 1440 * 100vw - 60px) auto,
+      // calc(1293 / 1440 * 100vw) auto,
+      calc(810 / 1440 * 100vw - 20px) auto,
+      calc(860 / 1440 * 100vw - 20px) auto;
+    transition: background-position var(--throttle-ms) linear;
+    will-change: background-position;
+  }
+
+  &:hover::before {
+    background-position-y: 100%;
+  }
+
+  &__box {
+    position: relative;
+    z-index: 1;
+    margin-top: $height-decor;
+    padding: 20px 93px 21px;
+    border-top: $border;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 5px;
+
+    @include breakpoint-down(670) {
+      padding: 10px;
+      justify-content: center;
+      column-gap: 20px;
+    }
+  }
+
+  &__item {
+    font-size: 15px;
+    line-height: 24px;
+    white-space: nowrap;
+    text-align: center;
+
+    &--address {
+      @include breakpoint-down(670) {
+        order: -1;
+        flex-basis: 100%;
+        white-space: normal;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1.2px;
+      background: var(--text-color);
+      transform-origin: right bottom;
+      transform: scaleX(0);
+      transition: -webkit-transform .3s ease, transform .3s ease;
+    }
+
+    &:hover::before {
+      transform-origin: left bottom;
+      transform: scaleX(100%);
+    }
+  }
+}
